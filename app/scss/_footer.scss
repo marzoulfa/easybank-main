@@ -1,0 +1,139 @@
+.footer{
+    background: $darkBlue;
+    text-align: center;
+    
+
+
+    &__content{
+             
+        @include breakpoints-up(large){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 2fr;
+            grid-template-rows: repeat(2, 30%);
+            justify-items: start;
+            gap: 0.8rem;
+            grid-template-areas: 
+            "logo links1 links2 callout"
+            "social links1 links2 copyright";
+            
+        
+        }
+    }
+
+ 
+
+        .logo{
+             display: inline-block;
+             @include breakpoints-up(large){
+                 grid-area: logo;
+             }
+        }
+
+        ul{
+            @include breakpoints-up(large){
+                grid-area: social;
+                // margin: ;
+            }
+            display: flex;
+            justify-content: center;
+            // align-items: center;
+            gap: 0.5rem;
+            margin: 1.188rem 0 1.188rem 0;
+            a{
+                display: inline-block;
+
+                svg path{
+                    transition: fill 200ms ease-in-out;
+                }
+                
+                &:hover{
+                    svg path{
+                        fill: $limGreen;
+                    }
+                }
+            }
+            
+            a:not(last-child){
+                margin-right: 0.2rem;
+
+            }
+
+          
+            }
+        
+    
+
+    &__links{
+           display: flex;
+           flex-direction: column;
+           gap: 0.5rem;
+           align-items: center;
+
+           @include breakpoints-up(large){
+               align-items: start;
+           }
+
+        &.col1{
+            @include breakpoints-up(large){
+                grid-area: links1;
+            }
+        }
+     
+        &.col1{
+            @include breakpoints-up(large){
+                grid-area: links2;
+            }
+        }
+
+        a{
+            color: $grayishBlue;
+            line-height: 2;
+            font-size: 1rem;
+            transition: color 300ms ease-in-out ;
+
+            &:hover{
+                color: $limGreen;
+            }
+        }
+     
+    }
+
+
+    &__callout{
+        @include breakpoints-up(large){
+            grid-area: callout;
+             align-self: end;
+            justify-self: end;
+            text-align: right;
+            margin: 0;
+        }
+        margin: 1.188rem 0 1.188rem 0;
+
+        button{
+            margin-bottom: 1.063rem;
+            opacity: 0.75;
+            @include breakpoints-up(large){
+                margin-bottom: 0;
+            }
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+     
+    }
+
+    &__copyright{
+        
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        
+        @include breakpoints-up(large){
+            grid-area: copyright;
+            align-self: center;
+            justify-self: end;
+            text-align: right;
+        }
+    }
+
+}

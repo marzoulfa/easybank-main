@@ -1,0 +1,70 @@
+.features{
+    background-color:$lightGrayishBlue;
+    text-align: center;
+    
+    @include breakpoints-up(medium){
+        text-align: unset;
+        margin-top: -4rem;
+    }
+}
+
+.feature{
+
+    &__intro{
+
+        margin-bottom: 3.5rem;
+      
+        @include breakpoints-up(large){
+            max-width: 60%;
+         
+        }
+    }
+   
+    &__content{
+     
+        @include breakpoints-up(medium)
+        {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item{
+        // border: 1px solid red;
+        padding: 0.9rem;
+      
+        @include breakpoints-up(medium)
+        { 
+            flex: 0 0 50%;
+        }
+        
+        @include breakpoints-up(large)
+        { 
+            flex: 1;
+        }
+
+    }
+
+    &__icon{
+      
+       margin-bottom: 1.875rem;
+
+       @include breakpoints-up(large){
+           margin-bottom: 2.75rem;
+       }
+    }
+
+    &__title{
+        margin-bottom: 1rem;
+
+        @include breakpoints-up(large){
+            margin-bottom: 1.25rem;
+        }
+    }
+
+    &__description{
+       line-height: 1.5;
+    }
+
+
+}
